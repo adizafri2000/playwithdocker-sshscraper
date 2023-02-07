@@ -21,13 +21,17 @@ This can be extracted as:
 For deploying a Docker application via repository cloning to [play with docker](https://labs.play-with-docker.com/), but certain parts of the code contain set localhost API endpoints. So when the app is deployed to play with docker, user needs to reconfigure files that contain the set localhost API endpoints e.g a frontend service sending data to backend service listening on http://localhost:4200 needs the 'localhost:4200' part changed to the play with docker opened port URL.
 Based on the [above](https://github.com/adizafri2000/playwithdocker-sshscraper#play-with-docker-vm-instances-ssh-credentials-and-app-url-endpoints) section, this means that the words ``localhost`` and ``4200`` as well as the colon ``:`` needs to be converted to be as similar as the [above](https://github.com/adizafri2000/playwithdocker-sshscraper#play-with-docker-vm-instances-ssh-credentials-and-app-url-endpoints) so that the API endpoints can be correctly configured to run on the play with Docker environment.
 
+For example:\n
+``http://localhost:4200``
+will be converted to:
+``http://ip172-18-0-17-cfb5ivn91rrg00dk7lj0-4200.direct.labs.play-with-docker.com``
+
 ## Requirements
 1. Java 8 and Maven 3.6 (supported version as it was developed with it, newer versions might be supported too, idk)
 2. A [Docker Hub](https://hub.docker.com/) account
 
 ## Current steps to use
-1. Change the ``USERNAME`` and ``PASSWORD`` in the [.properties](https://github.com/adizafri2000/playwithdocker-sshscraper/blob/master/.properties)
-   ) file to your own Docker Hub credentials
+1. Change the ``USERNAME`` and ``PASSWORD`` in the [.properties](https://github.com/adizafri2000/playwithdocker-sshscraper/blob/master/.properties) file to your own Docker Hub credentials
 2. Run ``mvn clean install``
 3. Output should be generated in a new file called ``sshcred.txt``
 
