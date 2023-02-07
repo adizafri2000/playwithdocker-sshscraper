@@ -1,4 +1,4 @@
-(WIP) To scrape ssh credentials from Play with Docker environment via automation
+(WIP) To scrape ssh credentials from [Play with Docker](https://labs.play-with-docker.com/) environment via automation
 The main purpose of this tool seems very niche, you can refer it to the [use case](https://github.com/adizafri2000/playwithdocker-sshscraper#use-cases). It might seems useless, but if it can be of any use to you (once it is completed), then it's all good!
 
 ## Planned method for use:
@@ -19,7 +19,7 @@ This can be extracted as:
 
 ## Use case(s?)
 For deploying a Docker application via repository cloning to [play with docker](https://labs.play-with-docker.com/), but certain parts of the code contain set localhost API endpoints. So when the app is deployed to play with docker, user needs to reconfigure files that contain the set localhost API endpoints e.g a frontend service sending data to backend service listening on http://localhost:4200 needs the 'localhost:4200' part changed to the play with docker opened port URL.
-Based on the above section, this means that the words ``localhost`` and ``4200`` as well as the colon ``:`` needs to be converted to be as similar as the above so that the API endpoints can be correctly configured to run on the play with Docker environment.
+Based on the [above](https://github.com/adizafri2000/playwithdocker-sshscraper#play-with-docker-vm-instances-ssh-credentials-and-app-url-endpoints) section, this means that the words ``localhost`` and ``4200`` as well as the colon ``:`` needs to be converted to be as similar as the [above](https://github.com/adizafri2000/playwithdocker-sshscraper#play-with-docker-vm-instances-ssh-credentials-and-app-url-endpoints) so that the API endpoints can be correctly configured to run on the play with Docker environment.
 
 ## Requirements
 1. Java 8 and Maven 3.6 (supported version as it was developed with it, newer versions might be supported too, idk)
@@ -46,7 +46,7 @@ but are now able to skip the entire deployment steps and simply do everything fr
 2. Enter Docker credentials in separate tab popup
 3. Return focus to [play with docker](https://labs.play-with-docker.com/)
 4. Click on 'Add new Instance' button
-5. Retrieve ssh command text as final output and write it to sshcred.txt
+5. Retrieve ssh command text as final output and write it to ``sshcred.txt``
 
 ### Involved pages:
 #### [Main play with docker](https://labs.play-with-docker.com/)
